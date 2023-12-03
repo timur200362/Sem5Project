@@ -1,4 +1,4 @@
-package com.itis.core.designsystem.com.example.core.designsystem.theme
+package com.example.core.designsystem.com.example.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

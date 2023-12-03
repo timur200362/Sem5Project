@@ -1,4 +1,4 @@
-package com.itis.core.designsystem
+package com.example.core.designsystem
 
 import android.app.Activity
 import android.os.Build
@@ -14,12 +14,12 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.itis.core.designsystem.com.example.core.designsystem.theme.Pink40
-import com.itis.core.designsystem.com.example.core.designsystem.theme.Pink80
-import com.itis.core.designsystem.com.example.core.designsystem.theme.Purple40
-import com.itis.core.designsystem.com.example.core.designsystem.theme.Purple80
-import com.itis.core.designsystem.com.example.core.designsystem.theme.PurpleGrey40
-import com.itis.core.designsystem.com.example.core.designsystem.theme.PurpleGrey80
+import com.example.core.designsystem.com.example.core.designsystem.theme.Pink40
+import com.example.core.designsystem.com.example.core.designsystem.theme.Pink80
+import com.example.core.designsystem.com.example.core.designsystem.theme.Purple40
+import com.example.core.designsystem.com.example.core.designsystem.theme.Purple80
+import com.example.core.designsystem.com.example.core.designsystem.theme.PurpleGrey40
+import com.example.core.designsystem.com.example.core.designsystem.theme.PurpleGrey80
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -70,7 +70,7 @@ fun ModuleappTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        //typography = Typography,
+        typography = Typography,
         content = content
     )
 }
