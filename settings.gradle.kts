@@ -32,6 +32,5 @@ include(":core:db")
 include(":core:navigation")
 
 include(":feature:home")
-include(":feature:profile")
 include(":feature:home:api")
 include(":feature:home:impl")

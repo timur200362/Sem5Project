@@ -18,12 +18,9 @@ android {
 
 dependencies {
 
-    implementation(project(":core:designsystem"))
+    api(project(":core:designsystem"))
 
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    api(libs.coil)
+    api(libs.coil.svg)
+    api(libs.coil.compose)
 }

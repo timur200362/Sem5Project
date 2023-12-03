@@ -42,6 +42,7 @@ retrofitKotlinxSerializationJson = "1.0.0"
 room = "2.6.1"
 timber = "5.0.1"
 voyager = "1.0.0-rc07"
+uiGraphicsAndroid = "1.5.4"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -101,6 +102,7 @@ voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitio
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidx-ui-graphics-android = { group = "androidx.compose.ui", name = "ui-graphics-android", version.ref = "uiGraphicsAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -20,10 +20,18 @@ dependencies {
 
     implementation(project(":feature:home:api"))
 
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    implementation(project(":core:widget"))
+    implementation(project(":core:network"))
+    implementation(project(":core:db"))
+    implementation(project(":core:utils"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core:presentation"))
+
+    implementation(libs.koin)
+    implementation(libs.koin.compose)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
