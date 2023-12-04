@@ -20,6 +20,7 @@ import com.example.core.designsystem.com.example.core.designsystem.theme.Purple4
 import com.example.core.designsystem.com.example.core.designsystem.theme.Purple80
 import com.example.core.designsystem.com.example.core.designsystem.theme.PurpleGrey40
 import com.example.core.designsystem.com.example.core.designsystem.theme.PurpleGrey80
+import com.example.core.designsystem.com.example.core.designsystem.theme.Typography
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
