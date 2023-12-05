@@ -12,7 +12,7 @@ espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.1"
 compose-bom = "2023.10.01"
-composeKotlinCompiler = "1.5.3"
+composeKotlinCompiler = "1.5.2"
 material = "1.10.0"
 
 androidxAppCompat = "1.6.1"
@@ -59,6 +59,7 @@ compose-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-material-icons = { group = "androidx.compose.material", name = "material-icons-extended"}
 compose-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-kotlin-compiler = {group="androidx.compose.compiler", name = "compiler", version.ref="composeKotlinCompiler"}
 
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }

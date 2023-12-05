@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
+    api(libs.compose.kotlin.compiler)
 
     implementation(libs.core.ktx)
     implementation(libs.androidx.camera.core)

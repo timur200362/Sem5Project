@@ -43,6 +43,7 @@ dependencies {
     api(libs.compose.graphics)
     api(libs.compose.material.icons)
     api(libs.compose.tooling.preview)
+    api(libs.compose.kotlin.compiler)
 
     debugApi(libs.compose.tooling)
 
