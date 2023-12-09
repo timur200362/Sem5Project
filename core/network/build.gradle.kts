@@ -42,6 +42,7 @@ dependencies {
     api(libs.retrofit.core)
     api(libs.retrofit.kotlin.serialization)
     api(libs.kotlinx.serialization.json)
+    api(libs.retrofit.json.converter)
 
     implementation(libs.kotlinx.coroutines.core)
 }
