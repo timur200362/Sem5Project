@@ -29,8 +29,6 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:presentation"))
 
-    implementation(libs.koin)
-    implementation(libs.koin.compose)
 
     testImplementation(libs.junit)
 

@@ -1,4 +1,4 @@
-package com.example.core.network
+package com.example.feature.home.impl.data.datasource
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

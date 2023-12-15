@@ -1,6 +1,5 @@
 package com.example.moduleapp
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +19,7 @@ class MainActivity : ComponentActivity() {
             ModuleappTheme{
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
+                    DesignCompose()
                 }
             }
         }

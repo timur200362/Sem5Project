@@ -38,7 +38,11 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.androidx.camera.core)
     implementation(project(":core:designsystem"))
+    implementation(project(":feature:home:impl"))
+    implementation(project(":core:network"))
 
+//    implementation(libs.koin)
+//    implementation(libs.koin.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

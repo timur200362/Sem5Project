@@ -35,9 +35,9 @@ android {
 
 dependencies {
 
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
-    implementation(libs.koin)
+    api(libs.okhttp)
+    api(libs.okhttp.logging)
+    api(libs.koin)
 
     api(libs.retrofit.core)
     api(libs.retrofit.kotlin.serialization)
