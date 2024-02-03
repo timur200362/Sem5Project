@@ -1,4 +1,4 @@
-package com.example.feature.home.impl.data.datasource
+package com.example.feature.home.impl.data.datasource.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

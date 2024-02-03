@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-
+    api(libs.lifecycle.compose.compiler)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 }

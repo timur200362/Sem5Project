@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.activity.ComponentActivity
 import com.example.core.designsystem.ModuleappTheme
+import com.example.feature.home.impl.presentation.DesignCompose
 
 
 class MainActivity : ComponentActivity() {

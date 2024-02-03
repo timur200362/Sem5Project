@@ -38,6 +38,7 @@ dependencies {
     api(libs.okhttp)
     api(libs.okhttp.logging)
     api(libs.koin)
+    api(libs.koin.compose)
 
     api(libs.retrofit.core)
     api(libs.retrofit.kotlin.serialization)

@@ -1,4 +1,4 @@
-package com.example.feature.home.impl.data.datasource
+package com.example.feature.home.impl.data.datasource.remote
 
 import com.example.feature.home.impl.data.datasource.remote.response.GetAllFilmsResponse
 import retrofit2.http.GET
