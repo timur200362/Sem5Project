@@ -5,7 +5,7 @@ import com.example.feature.home.impl.data.datasource.remote.ApiService
 
 class MovieRepository(private val apiService: ApiService) {
     suspend fun getMovies():List<Movie> {
-        return apiService.loadMovies(1).docs.map {
+        return apiService.loadMovies().docs.map {
             Movie(
                 it.description,
                 it.genres,
