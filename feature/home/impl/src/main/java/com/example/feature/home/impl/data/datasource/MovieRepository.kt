@@ -1,11 +1,12 @@
 package com.example.feature.home.impl.data.datasource
 
+import android.util.Log
 import com.example.feature.home.impl.data.datasource.memory.Movie
 import com.example.feature.home.impl.data.datasource.remote.ApiService
 
 class MovieRepository(private val apiService: ApiService) {
-    suspend fun getMovies():List<Movie> {
-        return apiService.loadMovies().docs.map {
+    suspend fun getMovies(): List<Movie> {
+        val result = apiService.loadMovies().docs.map {
             Movie(
                 it.description,
                 it.genres,
@@ -16,5 +17,7 @@ class MovieRepository(private val apiService: ApiService) {
                 it.releaseYears
             )
         }
+        Log.i("MovieRepository", result.toString())
+        return result
     }
 }

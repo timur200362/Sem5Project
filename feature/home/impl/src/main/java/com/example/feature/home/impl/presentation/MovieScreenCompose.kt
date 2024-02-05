@@ -33,7 +33,7 @@ fun LazyColumnSample(viewModel: MovieViewModel=koinViewModel()) {
             .background(Color.White),
     ) {
         items(state.movieList) { movie ->
-            Text(movie.name)
+            Text(movie.name ?: "Timur")
         }
     }
 }
