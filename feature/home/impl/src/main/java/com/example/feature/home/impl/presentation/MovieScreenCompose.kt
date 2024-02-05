@@ -1,7 +1,9 @@
 package com.example.feature.home.impl.presentation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
@@ -11,7 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil.compose.AsyncImage
 import com.example.core.designsystem.ModuleappTheme
 import org.koin.androidx.compose.koinViewModel
 
@@ -34,6 +38,7 @@ fun LazyColumnSample(viewModel: MovieViewModel=koinViewModel()) {
     ) {
         items(state.movieList) { movie ->
             Text(movie.name ?: "Timur")
+            //AsyncImage(model = movie.poster, contentDescription = null, modifier = Modifier.padding(top=120.dp))
         }
     }
 }
