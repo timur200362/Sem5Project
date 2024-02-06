@@ -13,6 +13,7 @@ lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.1"
 compose-bom = "2023.10.01"
 composeKotlinCompiler = "1.5.2"
+composeRuntime="1.0.0"
 material = "1.10.0"
 
 androidxAppCompat = "1.6.1"
@@ -41,9 +42,10 @@ retrofit = "2.9.0"
 retrofitKotlinxSerializationJson = "1.0.0"
 room = "2.6.1"
 timber = "5.0.1"
-voyager = "1.0.0-rc07"
+voyager = "1.0.0"
 uiGraphicsAndroid = "1.5.4"
 cameraCore = "1.3.0"
+lifecycleRuntimeCompose = "2.7.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -60,6 +62,7 @@ compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-material-icons = { group = "androidx.compose.material", name = "material-icons-extended"}
 compose-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-kotlin-compiler = {group="androidx.compose.compiler", name = "compiler", version.ref="composeKotlinCompiler"}
+compose-runtime={group="androidx.compose.runtime", name = "runtime", version.ref="composeRuntime"}
 lifecycle-compose-compiler = {group = "androidx.lifecycle", name="lifecycle-runtime-compose", version="2.6.2"}
 
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
@@ -97,6 +100,7 @@ room-kapt = { group = "androidx.room", name = "room-compiler", version.ref = "ro
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
 voyager-core = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager" }
+voyager-sc = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyager" }
 voyager-bs = { group = "cafe.adriel.voyager", name = "voyager-bottom-sheet-navigator", version.ref = "voyager" }
 voyager-tab = { group = "cafe.adriel.voyager", name = "voyager-tab-navigator", version.ref = "voyager" }
 voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager" }
@@ -108,6 +112,7 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 androidx-ui-graphics-android = { group = "androidx.compose.ui", name = "ui-graphics-android", version.ref = "uiGraphicsAndroid" }
 androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

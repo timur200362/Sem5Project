@@ -1,4 +1,4 @@
-package com.example.core.utlis
+package com.example.feature.homedetail.impl
 
 import org.junit.Test
 
