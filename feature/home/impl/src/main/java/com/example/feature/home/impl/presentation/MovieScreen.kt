@@ -1,6 +1,7 @@
 package com.example.feature.home.impl.presentation
 
-import android.os.Bundle
+
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,24 +19,27 @@ import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.example.core.designsystem.ModuleappTheme
+import org.koin.androidx.compose.koinViewModel
 
 data class MovieScreen(
-    val index: Int,
+    val index: Int
 ): Screen {
 
     @Composable
     override fun Content(){
         ModuleappTheme{
-            val screenModel = getScreenModel<MovieScreenModel>()
             Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                 Screen()
             }
         }
     }
     @Composable
-    fun Screen(viewModel: MovieScreenModel=getScreenModel()) {
+    fun Screen(
+        viewModel: MovieViewModel=koinViewModel()
+    ) {
         val navigator = LocalNavigator.currentOrThrow
         val state by viewModel.state.collectAsStateWithLifecycle()
+        Text(text = "test")
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -43,7 +47,6 @@ data class MovieScreen(
         ) {
             items(state.movieList) { movie ->
                 Text(movie.name ?: "Timur")
-                //AsyncImage(model = movie.poster, contentDescription = null, modifier = Modifier.padding(top=120.dp))
             }
         }
     }

@@ -26,8 +26,14 @@ android {
 
 dependencies {
 
+    implementation(project(":feature:home:api"))
+
     implementation(project(":core:widget"))
-    api(project(":core:navigation"))
+    implementation(project(":core:network"))
+    implementation(project(":core:db"))
+    implementation(project(":core:utils"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core:presentation"))
 
 
     testImplementation(libs.junit)
@@ -35,6 +41,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.koin)
     implementation(libs.voyager.core)
@@ -43,5 +50,4 @@ dependencies {
     implementation(libs.voyager.tab)
     implementation(libs.voyager.transitions)
     implementation(libs.voyager.bs)
-    implementation(libs.google.json)
 }

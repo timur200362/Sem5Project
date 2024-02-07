@@ -13,11 +13,7 @@ class ApiFactory {
 
     private val loggingInterceptor =
         HttpLoggingInterceptor().apply {
-            level = if (BuildConfig.DEBUG) {
-                HttpLoggingInterceptor.Level.BODY
-            } else {
-                HttpLoggingInterceptor.Level.NONE
-            }
+            level =  HttpLoggingInterceptor.Level.BODY
         }
 
     private val httpClient by lazy {

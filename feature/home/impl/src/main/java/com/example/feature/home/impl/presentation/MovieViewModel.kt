@@ -1,15 +1,14 @@
 package com.example.feature.home.impl.presentation
 
 import androidx.lifecycle.viewModelScope
-import cafe.adriel.voyager.core.model.ScreenModel
 import com.example.feature.home.impl.usecase.MovieUseCase
 import com.example.feature.home.mviRealisation.BaseViewModel
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class MovieScreenModel(
+class MovieViewModel(
     private val movieUseCase: MovieUseCase
-): ScreenModel,BaseViewModel<MainScreenState,MainScreenUiEvent>(){
+): BaseViewModel<MainScreenState,MainScreenUiEvent>(){
 
     private var reducer:MainReducer = MainReducer(MainScreenState.initial(), movieUseCase)
 
