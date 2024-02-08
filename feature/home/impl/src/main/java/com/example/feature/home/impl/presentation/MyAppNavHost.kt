@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -16,11 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import coil.compose.AsyncImage
-import com.example.core.designsystem.ModuleappTheme
 import org.koin.androidx.compose.koinViewModel
 import com.example.feature.homedetail.impl.presentation.MovieDetailScreen
 
@@ -37,11 +36,14 @@ fun MyAppNavHost(
     ){
         composable("movie"){
             MovieScreen (
-                onNavigateToDetail = {navController.navigate("detail")}
+                onNavigateToDetail = {navController.navigate("detail/filmId")}
             )
         }
-        composable("detail") {
-            MovieDetailScreen()
+        composable(
+            "detail/filmId",
+            arguments = listOf(navArgument("filmId") {defaultValue = 0})
+        ) {backStackEntry ->
+            MovieDetailScreen(backStackEntry.arguments?.getInt("filmId"))
         }
     }
 }
@@ -49,7 +51,7 @@ fun MyAppNavHost(
 @Composable
 fun MovieScreen(
     viewModel: MovieViewModel=koinViewModel(),
-    onNavigateToDetail: () -> Unit
+    onNavigateToDetail: (Int) -> Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     LazyColumn(
@@ -62,7 +64,7 @@ fun MovieScreen(
                 model = movie.poster?.previewUrl,
                 contentDescription = null,
                 modifier = Modifier
-                    .clickable (onClick = onNavigateToDetail)
+                    .clickable (onClick = { movie.id?.let { onNavigateToDetail(it) } })
                     .size(250.dp)
             )
         }

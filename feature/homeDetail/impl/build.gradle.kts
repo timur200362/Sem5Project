@@ -26,8 +26,6 @@ android {
 
 dependencies {
 
-    implementation(project(":feature:home:api"))
-
     implementation(project(":core:widget"))
     implementation(project(":core:network"))
     implementation(project(":core:db"))

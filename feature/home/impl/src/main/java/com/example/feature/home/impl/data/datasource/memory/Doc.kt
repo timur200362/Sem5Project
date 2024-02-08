@@ -9,7 +9,7 @@ data class Doc(
     val description: String,
     @SerializedName("genres")
     val genres: List<Genre>,
-    @SerializedName("kp")
+    @SerializedName("id")
     val id: Int,
     //val isSeries: Boolean,
     //val logo: Logo,
@@ -21,13 +21,11 @@ data class Doc(
     val poster: Poster,
     @SerializedName("rating")
     val rating: Rating,
-    //val ratingMpaa: String,
     @SerializedName("releaseYears")
     val releaseYears: List<ReleaseYear>,
     //val seriesLength: Int,
     //val shortDescription: String,
     //val status: String,
-    //val ticketsOnSale: Boolean,
     //val top10: Any,
     //val top250: Int,
     //val totalSeriesLength: Any,
