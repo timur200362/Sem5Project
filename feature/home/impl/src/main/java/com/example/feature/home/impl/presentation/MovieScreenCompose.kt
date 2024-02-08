@@ -38,7 +38,6 @@ fun LazyColumnSample(viewModel: MovieViewModel=koinViewModel()) {
     ) {
         items(state.movieList) { movie ->
             Text(movie.name ?: "Timur")
-            //AsyncImage(model = movie.poster, contentDescription = null, modifier = Modifier.padding(top=120.dp))
         }
     }
 }
