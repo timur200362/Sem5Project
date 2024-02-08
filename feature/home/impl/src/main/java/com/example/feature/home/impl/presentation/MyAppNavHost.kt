@@ -22,6 +22,7 @@ import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.example.core.designsystem.ModuleappTheme
 import org.koin.androidx.compose.koinViewModel
+import com.example.feature.homedetail.impl.presentation.MovieDetailScreen
 
 @Composable
 fun MyAppNavHost(
@@ -40,6 +41,7 @@ fun MyAppNavHost(
             )
         }
         composable("detail") {
+            MovieDetailScreen()
         }
     }
 }
