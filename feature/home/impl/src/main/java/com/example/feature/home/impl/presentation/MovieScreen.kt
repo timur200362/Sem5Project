@@ -14,40 +14,28 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.koin.getScreenModel
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
 import com.example.core.designsystem.ModuleappTheme
 import org.koin.androidx.compose.koinViewModel
 
-data class MovieScreen(
-    val index: Int
-): Screen {
-
-    @Composable
-    override fun Content(){
-        ModuleappTheme{
-            Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                Screen()
-            }
+@Composable
+fun MovieScreen(){
+    ModuleappTheme{
+        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+            LazyColumnSample()
         }
     }
-    @Composable
-    fun Screen(
-        viewModel: MovieViewModel=koinViewModel()
+}
+
+@Composable
+fun LazyColumnSample(viewModel: MovieViewModel=koinViewModel()) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White),
     ) {
-        val navigator = LocalNavigator.currentOrThrow
-        val state by viewModel.state.collectAsStateWithLifecycle()
-        Text(text = "test")
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.White),
-        ) {
-            items(state.movieList) { movie ->
-                Text(movie.name ?: "Timur")
-            }
+        items(state.movieList) { movie ->
+            Text(movie.name ?: "Timur")
         }
     }
 }
