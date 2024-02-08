@@ -51,11 +51,4 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
-
-    implementation(libs.voyager.core)
-    implementation(libs.voyager.sc)
-    implementation(libs.voyager.koin)
-    implementation(libs.voyager.tab)
-    implementation(libs.voyager.transitions)
-    implementation(libs.voyager.bs)
 }
