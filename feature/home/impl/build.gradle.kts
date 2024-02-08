@@ -25,15 +25,15 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":feature:home:api"))
-
     implementation(project(":core:widget"))
     implementation(project(":core:network"))
     implementation(project(":core:db"))
     implementation(project(":core:utils"))
     implementation(project(":core:navigation"))
     implementation(project(":core:presentation"))
+
+    implementation(project(":feature:home:api"))
+    implementation(project(":feature:homeDetail:impl"))
 
 
     testImplementation(libs.junit)
@@ -43,4 +43,5 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.koin)
     implementation(libs.coil)
+    implementation(libs.navigation.compose)
 }

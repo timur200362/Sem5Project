@@ -44,10 +44,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.koin)
-    implementation(libs.voyager.core)
-    implementation(libs.voyager.sc)
-    implementation(libs.voyager.koin)
-    implementation(libs.voyager.tab)
-    implementation(libs.voyager.transitions)
-    implementation(libs.voyager.bs)
+    implementation(libs.navigation.compose)
 }

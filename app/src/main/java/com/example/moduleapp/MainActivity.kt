@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.core.designsystem.ModuleappTheme
-import com.example.feature.home.impl.presentation.MovieScreen
+import com.example.feature.home.impl.presentation.MyAppNavHost
 
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
             ModuleappTheme{
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    MovieScreen()
+                    MyAppNavHost()
                 }
             }
         }

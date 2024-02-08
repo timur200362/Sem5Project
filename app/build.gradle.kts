@@ -37,6 +37,7 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.androidx.camera.core)
+    implementation(libs.navigation.compose)
     implementation(project(":core:designsystem"))
     implementation(project(":feature:home:impl"))
     implementation(project(":core:navigation"))
