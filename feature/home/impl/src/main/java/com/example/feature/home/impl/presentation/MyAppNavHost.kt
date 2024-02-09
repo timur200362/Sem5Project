@@ -36,11 +36,13 @@ fun MyAppNavHost(
     ){
         composable("movie"){
             MovieScreen (
-                onNavigateToDetail = {navController.navigate("detail/filmId")}
+                onNavigateToDetail = {filmId ->
+                    navController.navigate("detail/$filmId")
+                }
             )
         }
         composable(
-            "detail/filmId",
+            "detail/{filmId}",
             arguments = listOf(navArgument("filmId") {defaultValue = 0})
         ) {backStackEntry ->
             MovieDetailScreen(backStackEntry.arguments?.getInt("filmId"))
