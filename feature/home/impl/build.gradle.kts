@@ -33,6 +33,7 @@ dependencies {
     implementation(project(":core:presentation"))
 
     implementation(project(":feature:home:api"))
+    implementation(project(":feature:homeDetail:api"))
     implementation(project(":feature:homeDetail:impl"))
 
 

@@ -7,18 +7,18 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class MovieViewModel(
-    private val movieUseCase: MovieUseCase
-): BaseViewModel<MainScreenState,MainScreenUiEvent>(){
+    movieUseCase: MovieUseCase
+): BaseViewModel<MovieScreenState,MovieScreenUiEvent>(){
 
-    private var reducer:MainReducer = MainReducer(MainScreenState.initial(), movieUseCase)
+    private var reducer:MovieReducer = MovieReducer(MovieScreenState.initial(), movieUseCase)
 
     init {
-        sendEvent(MainScreenUiEvent.GetMovies)
+        sendEvent(MovieScreenUiEvent.GetMovies)
     }
 
-    override val state: StateFlow<MainScreenState>
+    override val state: StateFlow<MovieScreenState>
         get() = reducer.state
-    private fun sendEvent(event: MainScreenUiEvent) {
+    private fun sendEvent(event: MovieScreenUiEvent) {
         viewModelScope.launch{
             reducer.sendEvent(event)
         }

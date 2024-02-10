@@ -38,10 +38,14 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.androidx.camera.core)
     implementation(libs.navigation.compose)
-    implementation(project(":core:designsystem"))
-    implementation(project(":feature:home:impl"))
-    implementation(project(":core:navigation"))
+
     implementation(project(":feature:home:api"))
+    implementation(project(":feature:home:impl"))
+    implementation(project(":feature:homeDetail:api"))
+    implementation(project(":feature:homeDetail:impl"))
+
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:navigation"))
     implementation(project(":core:utils"))
     implementation(project(":core:db"))
     implementation(project(":core:presentation"))

@@ -3,12 +3,12 @@ package com.example.feature.home.impl.presentation
 import com.example.feature.home.impl.usecase.MovieUseCase
 import com.example.feature.home.mviRealisation.Reducer
 
-class MainReducer(initial: MainScreenState,
-                          private val movieUseCase: MovieUseCase
-): Reducer<MainScreenState, MainScreenUiEvent>(initial){
-    override suspend fun reduce(oldState: MainScreenState, event: MainScreenUiEvent) {
+class MovieReducer(initial: MovieScreenState,
+                   private val movieUseCase: MovieUseCase
+): Reducer<MovieScreenState, MovieScreenUiEvent>(initial){
+    override suspend fun reduce(oldState: MovieScreenState, event: MovieScreenUiEvent) {
         when (event) {
-            is MainScreenUiEvent.GetMovies -> {
+            is MovieScreenUiEvent.GetMovies -> {
                 val listMovies = movieUseCase.execute()
                 setState(oldState.copy(listMovies))//newState
             }

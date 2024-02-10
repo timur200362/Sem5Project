@@ -2,6 +2,7 @@ package com.example.moduleapp
 
 import android.app.Application
 import com.example.feature.home.homeModule
+import com.example.feature.homedetail.detailModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -15,7 +16,7 @@ class App:Application() {
         startKoin{
             androidLogger(Level.DEBUG)
             androidContext(this@App)
-            modules(listOf(homeModule))
+            modules(listOf(homeModule, detailModule))
         }
     }
 }

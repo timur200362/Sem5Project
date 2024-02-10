@@ -35,12 +35,11 @@ dependencies {
 
 
     testImplementation(libs.junit)
-
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.koin)
+    implementation(libs.coil)
     implementation(libs.navigation.compose)
 }

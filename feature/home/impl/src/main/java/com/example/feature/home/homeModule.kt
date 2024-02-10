@@ -8,7 +8,7 @@ import com.example.feature.home.impl.usecase.MovieUseCase
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val homeModule= module {
+val homeModule = module {
     single<ApiService> { ApiFactory().moviesApi }
     single<MovieRepository> { MovieRepository(get()) }
     factory<MovieUseCase> { MovieUseCase(get()) }
