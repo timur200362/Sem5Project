@@ -1,6 +1,7 @@
 package com.example.feature.homedetail.impl.presentation
 
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -39,32 +40,26 @@ fun LoadInfo(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    LazyColumn {
-        //LoadContent(movieDetailInfo = state.movieDetailInfo)
+    Column {
+//        AsyncImage(
+//            model = state.movieDetailInfo.poster?.url,
+//            contentDescription = null,
+//            modifier = Modifier
+//                .offset(y = 50.dp)
+//        )
+        Text(
+            text = state.movieDetailInfo.name.toString(),
+            modifier = Modifier.padding(top = 30.dp)
+        )
+        Text(
+            text = "${state.movieDetailInfo.year}",
+            modifier = Modifier
+                //.background(Color.Yellow)
+                .padding(top = 30.dp)
+        )
+        Text(
+            text = state.movieDetailInfo.description.toString(),
+            modifier = Modifier.padding(top = 30.dp)
+        )
     }
-}
-@Composable
-fun LoadContent(
-    movieDetailInfo:DetailMovieByIdResponse
-){
-    AsyncImage(
-        model = movieDetailInfo.poster?.url,
-        contentDescription = null,
-        modifier = Modifier
-            .offset(y = 50.dp)
-    )
-    Text(
-        text = movieDetailInfo.name.toString(),
-        modifier = Modifier.padding(top = 30.dp)
-    )
-    Text(
-        text = "${movieDetailInfo.year}",
-        modifier = Modifier
-            //.background(Color.Yellow)
-            .padding(top = 30.dp)
-    )
-    Text(
-        text = movieDetailInfo.description.toString(),
-        modifier = Modifier.padding(top = 30.dp)
-    )
 }

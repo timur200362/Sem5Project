@@ -96,6 +96,7 @@ retrofit-json-converter={group = "com.squareup.retrofit2", name = "converter-gso
 retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 
 room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-kapt = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
