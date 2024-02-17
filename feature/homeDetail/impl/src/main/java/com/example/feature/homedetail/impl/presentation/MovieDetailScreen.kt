@@ -19,7 +19,10 @@ import com.example.core.designsystem.ModuleappTheme
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.example.feature.homedetail.impl.data.datasource.remote.response.DetailMovieByIdResponse
 
 @Composable
@@ -43,23 +46,39 @@ fun LoadInfo(
     Column {
 //        AsyncImage(
 //            model = state.movieDetailInfo.poster?.url,
-//            contentDescription = null,
-//            modifier = Modifier
-//                .offset(y = 50.dp)
+//            contentDescription = null
 //        )
         Text(
             text = state.movieDetailInfo.name.toString(),
-            modifier = Modifier.padding(top = 30.dp)
+            modifier = Modifier.padding(top = 30.dp),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
         )
         Text(
             text = "${state.movieDetailInfo.year}",
+            color = Color(255, 140, 0),
             modifier = Modifier
-                //.background(Color.Yellow)
-                .padding(top = 30.dp)
+                .padding(top = 30.dp),
+            fontSize = 18.sp
         )
+        state.movieDetailInfo.genres?.let {
+            Text(
+                text = "Жанр: ${it.joinToString { it?.name.toString() }}",
+                modifier = Modifier.padding(top = 30.dp),
+                fontSize = 18.sp
+            )
+        }
+        state.movieDetailInfo.countries?.let {
+            Text(
+                text = "Страна: ${it.joinToString { it?.name.toString() }}",
+                modifier = Modifier.padding(top = 30.dp),
+                fontSize = 18.sp
+            )
+        }
         Text(
             text = state.movieDetailInfo.description.toString(),
-            modifier = Modifier.padding(top = 30.dp)
+            modifier = Modifier.padding(top = 30.dp),
+            fontSize = 18.sp
         )
     }
 }
