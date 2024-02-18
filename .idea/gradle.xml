@@ -19,12 +19,18 @@
             <option value="$PROJECT_DIR$/core/utils" />
             <option value="$PROJECT_DIR$/core/widget" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/favourites" />
+            <option value="$PROJECT_DIR$/feature/favourites/api" />
+            <option value="$PROJECT_DIR$/feature/favourites/impl" />
             <option value="$PROJECT_DIR$/feature/home" />
             <option value="$PROJECT_DIR$/feature/home/api" />
             <option value="$PROJECT_DIR$/feature/home/impl" />
             <option value="$PROJECT_DIR$/feature/homeDetail" />
             <option value="$PROJECT_DIR$/feature/homeDetail/api" />
             <option value="$PROJECT_DIR$/feature/homeDetail/impl" />
+            <option value="$PROJECT_DIR$/feature/settings" />
+            <option value="$PROJECT_DIR$/feature/settings/api" />
+            <option value="$PROJECT_DIR$/feature/settings/impl" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

@@ -35,17 +35,21 @@ android {
 dependencies {
 
     api(libs.core.ktx)
-    api(libs.material3)
     api(libs.androidx.appcompat)
     api(libs.activity.compose)
     api(platform(libs.compose.bom))
     api(libs.compose)
+    api(libs.compose.runtime)
     api(libs.compose.graphics)
     api(libs.compose.material.icons)
     api(libs.compose.tooling.preview)
+    api(libs.compose.tooling)
     api(libs.compose.kotlin.compiler)
-
-    debugApi(libs.compose.tooling)
+    api(libs.compose.material.icons)
+    api(libs.compose.material.icons.core)
+    api(libs.material)
+    api(libs.material3)
+    api(libs.androidx.compose.material)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

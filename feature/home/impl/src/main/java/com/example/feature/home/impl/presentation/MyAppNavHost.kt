@@ -106,32 +106,3 @@ fun MovieScreen(
         }
     }
 }
-//@Composable
-//fun RowImages(
-//    movie:Movie,
-//    //onNavigateToDetail: () -> Unit
-//){
-//    LazyRow {
-//        item {
-//            AsyncImage(
-//                model = movie.poster?.previewUrl,
-//                contentDescription = null,
-//                modifier = Modifier
-//                    .size(220.dp)
-//                    .padding(start = 1.dp)
-//            )
-//        }
-//        item {
-//            Spacer(modifier = Modifier.width(6.dp))
-//        }
-//        item {
-//            AsyncImage(
-//                model = movie.poster?.previewUrl,
-//                contentDescription = null,
-//                modifier = Modifier
-//                    .size(220.dp)
-//                    .padding(end = 1.dp)
-//            )
-//        }
-//    }
-//}

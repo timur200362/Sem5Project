@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlin.serialization)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -29,8 +30,8 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:db"))
     implementation(project(":core:utils"))
-    implementation(project(":core:navigation"))
     implementation(project(":core:presentation"))
+    implementation(project(":core:designsystem"))
 
     implementation(project(":feature:home:api"))
     implementation(project(":feature:homeDetail:api"))
@@ -45,4 +46,8 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.coil)
     implementation(libs.navigation.compose)
+    implementation(libs.room)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.room.ktx)
+    kapt(libs.room.kapt)
 }

@@ -33,6 +33,7 @@ dependencies {
     implementation(project(":core:utils"))
     implementation(project(":core:navigation"))
     implementation(project(":core:presentation"))
+    implementation(project(":core:designsystem"))
 
 
     testImplementation(libs.junit)

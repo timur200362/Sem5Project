@@ -43,6 +43,10 @@ dependencies {
     implementation(project(":feature:home:impl"))
     implementation(project(":feature:homeDetail:api"))
     implementation(project(":feature:homeDetail:impl"))
+    implementation(project(":feature:favourites:api"))
+    implementation(project(":feature:favourites:impl"))
+    implementation(project(":feature:settings:api"))
+    implementation(project(":feature:settings:impl"))
 
     implementation(project(":core:designsystem"))
     implementation(project(":core:navigation"))

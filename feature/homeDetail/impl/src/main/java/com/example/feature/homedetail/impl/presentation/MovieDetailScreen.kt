@@ -42,7 +42,6 @@ fun LoadInfo(
     viewModel: MovieDetailViewModel = koinViewModel {parametersOf(id)},
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val context = LocalContext.current
     Column {
 //        AsyncImage(
 //            model = state.movieDetailInfo.poster?.url,
