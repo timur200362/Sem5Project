@@ -1,11 +1,11 @@
-//package com.example.feature.homedetail.impl.data.datasource.db
-//
-//import androidx.room.Dao
-//import androidx.room.Delete
-//import androidx.room.Insert
-//import androidx.room.Query
-//import com.example.feature.homedetail.impl.data.datasource.remote.response.DetailMovieByIdResponse
-//
+package com.example.feature.home.impl.data.datasource.db
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import com.example.feature.homedetail.impl.data.datasource.remote.response.DetailMovieByIdResponse
+
 //@Dao
 //interface FilmDao {
 //    @Insert

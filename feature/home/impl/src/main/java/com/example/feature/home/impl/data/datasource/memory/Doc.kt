@@ -4,7 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class Doc(
     //val ageRating: Int,
-    //val countries: List<Country>,
+    @SerializedName("countries")
+    val countries: List<Country>,
     @SerializedName("description")
     val description: String,
     @SerializedName("genres")

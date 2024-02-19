@@ -9,6 +9,7 @@ class MovieRepositoryImpl(private val apiService: ApiService) {
     suspend fun getMovies(): List<Movie> {
         return  apiService.loadMovies().docs.map {
             Movie(
+                it.countries,
                 it.description,
                 it.genres,
                 it.id,
