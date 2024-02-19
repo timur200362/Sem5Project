@@ -1,4 +1,4 @@
-package com.example.feature.home
+package com.example.feature.home.di
 
 import com.example.feature.home.impl.data.datasource.remote.ApiFactory
 import com.example.feature.home.impl.data.datasource.remote.ApiService

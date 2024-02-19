@@ -15,8 +15,7 @@ class MovieRepositoryImpl(private val apiService: ApiService) {
                 it.id,
                 it.name,
                 it.poster,
-                it.rating,
-                it.releaseYears
+                //it.rating
             )
         }
     }

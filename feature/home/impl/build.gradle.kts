@@ -32,6 +32,7 @@ dependencies {
     implementation(project(":core:utils"))
     implementation(project(":core:presentation"))
     implementation(project(":core:designsystem"))
+    implementation(project(":core:navigation"))
 
     implementation(project(":feature:home:api"))
     implementation(project(":feature:homeDetail:api"))
@@ -43,11 +44,4 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.koin)
-    implementation(libs.coil)
-    implementation(libs.navigation.compose)
-    implementation(libs.room)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.room.ktx)
-    kapt(libs.room.kapt)
 }
