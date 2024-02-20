@@ -31,7 +31,7 @@ class ApiFactory {
             .build()
     }
 
-    val loadDetailById by lazy {
+    val moviesDetailApi by lazy {
         retrofit.create(ApiService::class.java)
     }
 }

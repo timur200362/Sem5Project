@@ -38,7 +38,6 @@ dependencies {
     implementation(project(":feature:homeDetail:api"))
     implementation(project(":feature:homeDetail:impl"))
 
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
