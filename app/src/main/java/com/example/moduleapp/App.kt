@@ -1,7 +1,7 @@
 package com.example.moduleapp
 
 import android.app.Application
-import com.example.feature.home.di.homeModule
+import com.example.feature.home.impl.di.homeModule
 import com.example.feature.home.impl.data.datasource.db.di.roomModule
 import com.example.feature.homedetail.detailModule
 import org.koin.android.ext.koin.androidContext

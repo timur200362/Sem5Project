@@ -10,7 +10,7 @@ import com.example.feature.homedetail.impl.data.datasource.remote.response.Detai
 @Dao
 interface FilmDao {
     @Insert
-    suspend fun insertAll(film: Film)
+    suspend fun insert(film: Film)
 
     @Delete
     suspend fun delete(film: Film)

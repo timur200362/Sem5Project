@@ -1,5 +1,6 @@
-package com.example.feature.home.di
+package com.example.feature.home.impl.di
 
+import com.example.feature.home.impl.data.datasource.MovieRepository
 import com.example.feature.home.impl.data.datasource.remote.ApiFactory
 import com.example.feature.home.impl.data.datasource.remote.ApiService
 import com.example.feature.home.impl.data.datasource.MovieRepositoryImpl
@@ -10,7 +11,7 @@ import org.koin.dsl.module
 
 val homeModule = module {
     single<ApiService> { ApiFactory().moviesApi }
-    single<MovieRepositoryImpl> { MovieRepositoryImpl(get()) }
+    single<MovieRepository> { MovieRepositoryImpl(get()) }
     factory<MovieUseCase> { MovieUseCase(get()) }
     viewModel<MovieViewModel>{ MovieViewModel(get()) }
 }
