@@ -122,12 +122,6 @@ fun MovieScreen(
                             .size(20.dp)
                             .clickable {
                                 movie.id?.let {
-//                                    if (viewModel.getById(it) == null){
-//                                        viewModel.insert(it)
-//                                    }
-//                                    else {
-//                                        Toast.makeText(context,"Фильм уже сохранён в Избранное",Toast.LENGTH_SHORT).show()
-//                                    }
                                     viewModel.insert(it)
                                 }
                             }
