@@ -14,7 +14,6 @@ class MovieToFilmConverter {
             name = movie.name,
             poster = movie.poster?.url,
             year = movie.year,
-            isFavorite = movie.isFavorite
         )
     }
 }

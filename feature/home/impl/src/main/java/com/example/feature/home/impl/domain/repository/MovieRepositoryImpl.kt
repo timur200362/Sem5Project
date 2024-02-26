@@ -26,7 +26,10 @@ class MovieRepositoryImpl(
     override suspend fun insert(film: Film) {
         filmDatabase.filmDao().insert(film)
     }
-    override suspend fun delete(film: Film){
-        filmDatabase.filmDao().delete(film)
+    override suspend fun delete(id: Int){
+        filmDatabase.filmDao().delete(id)
+    }
+    override suspend fun getById(id: Int){
+        filmDatabase.filmDao().getFilmById(id)
     }
 }

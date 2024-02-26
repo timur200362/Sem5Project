@@ -1,9 +1,12 @@
 package com.example.feature.home.impl.presentation
 
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +16,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -24,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -70,6 +76,7 @@ fun MovieScreen(
     viewModel: MovieViewModel=koinViewModel(),
     onNavigateToDetail: (Int) -> Unit
 ) {
+    val context = LocalContext.current
     val state by viewModel.state.collectAsStateWithLifecycle()
     LazyColumn(
         modifier = Modifier
@@ -86,7 +93,8 @@ fun MovieScreen(
                     .shadow(8.dp, shape = RoundedCornerShape(8.dp))
             ) {
                 Row (
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ){
                     AsyncImage(
                         model = movie.poster?.previewUrl,
@@ -98,23 +106,43 @@ fun MovieScreen(
                     Column {
                         Text(
                             text = movie.name.toString(),
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.Bold,
                         )
                         Text(
-                            text = "${movie.genres?.joinToString { it?.name.toString() }}",
+                            text = movie.genres.joinToString { it.name },
                             fontSize = 18.sp
                         )
                     }
+                }
+                Row {
                     Icon(
-                        imageVector = if (movie.isFavorite) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
+                        imageVector = Icons.Filled.FavoriteBorder,
                         contentDescription = "Favorite",
-                        tint = if (movie.isFavorite) Color.Red else Color.Gray,
                         modifier = Modifier
                             .size(20.dp)
                             .clickable {
-                                movie.id?.let { viewModel.toggleFavorite(it) }
+                                movie.id?.let {
+//                                    if (viewModel.getById(it) == null){
+//                                        viewModel.insert(it)
+//                                    }
+//                                    else {
+//                                        Toast.makeText(context,"Фильм уже сохранён в Избранное",Toast.LENGTH_SHORT).show()
+//                                    }
+                                    viewModel.insert(it)
+                                }
                             }
                     )
+//                    Icon(
+//                        imageVector = Icons.Filled.Cancel,
+//                        contentDescription = "Favorite",
+//                        modifier = Modifier
+//                            .size(20.dp)
+//                            .clickable {
+//                                movie.id?.let {
+//                                    viewModel.delete(it)
+//                                }
+//                            }
+//                    )
                 }
             }
         }

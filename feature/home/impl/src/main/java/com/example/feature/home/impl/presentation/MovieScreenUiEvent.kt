@@ -5,5 +5,7 @@ import com.example.feature.home.mviRealisation.UiEvent
 
 sealed class MovieScreenUiEvent : UiEvent {
     data object GetMovies : MovieScreenUiEvent()
-    data class ToggleFavorite(val movieId: Int) : MovieScreenUiEvent()
+    data class Insert(val id: Int) : MovieScreenUiEvent()
+    data class Delete(val id: Int) : MovieScreenUiEvent()
+    data class GetById(val id: Int) : MovieScreenUiEvent()
 }

@@ -6,5 +6,6 @@ import com.example.feature.home.impl.data.datasource.memory.Movie
 interface MovieRepository {
     suspend fun getMovies(): List<Movie>
     suspend fun insert(film: Film)
-    suspend fun delete(film: Film)
+    suspend fun delete(id: Int)
+    suspend fun getById(id: Int)
 }

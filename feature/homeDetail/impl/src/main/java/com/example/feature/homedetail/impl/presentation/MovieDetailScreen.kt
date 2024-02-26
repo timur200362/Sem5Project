@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -25,6 +26,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -55,7 +57,9 @@ fun LoadInfo(
     ) {
         AsyncImage(
             model = state.movieDetailInfo.poster?.url,
-            contentDescription = null
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxWidth()
         )
         Text(
             text = state.movieDetailInfo.name.toString(),
@@ -88,6 +92,12 @@ fun LoadInfo(
             text = state.movieDetailInfo.description.toString(),
             modifier = Modifier.padding(top = 30.dp),
             fontSize = 18.sp
+        )
+        Text(
+            text = "Трейлеры",
+            modifier = Modifier.padding(top = 10.dp, bottom = 10.dp),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
         )
         state.movieDetailInfo.videos?.trailers?.map { trailer ->
             ClickableText(

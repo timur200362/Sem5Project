@@ -14,5 +14,5 @@ data class Film(
     @ColumnInfo(name = "name") val name:String?,
     @ColumnInfo(name = "poster") val poster: String?,
     @ColumnInfo(name = "year") val year:Int?,
-    @ColumnInfo() val isFavorite:Boolean
+    @ColumnInfo(name = "favorite") val isFavorite:Boolean = true
 )

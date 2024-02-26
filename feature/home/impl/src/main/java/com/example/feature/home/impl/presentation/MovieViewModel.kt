@@ -2,9 +2,10 @@ package com.example.feature.home.impl.presentation
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
-import com.example.feature.home.impl.data.datasource.db.filmDatabase.Film
+import com.example.feature.home.impl.domain.usecase.DeleteUseCase
+import com.example.feature.home.impl.domain.usecase.GetByIdUseCase
+import com.example.feature.home.impl.domain.usecase.InsertUseCase
 import com.example.feature.home.impl.domain.usecase.MovieUseCase
-import com.example.feature.home.impl.domain.usecase.ToggleFavoriteUseCase
 import com.example.feature.home.mviRealisation.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
@@ -12,13 +13,17 @@ import kotlinx.coroutines.launch
 
 class MovieViewModel(
     movieUseCase: MovieUseCase,
-    toggleFavoriteUseCase: ToggleFavoriteUseCase
+    insertUseCase: InsertUseCase,
+    deleteUseCase: DeleteUseCase,
+    getByIdUseCase: GetByIdUseCase
 ): BaseViewModel<MovieScreenState,MovieScreenUiEvent>(){
 
     private var reducer:MovieReducer = MovieReducer(
         MovieScreenState.initial(),
         movieUseCase,
-        toggleFavoriteUseCase
+        insertUseCase,
+        deleteUseCase,
+        getByIdUseCase
     )
 
     init {
@@ -38,9 +43,19 @@ class MovieViewModel(
             }
         }
     }
-    fun toggleFavorite(movieId: Int){
+    fun insert(id: Int){
         viewModelScope.launch(Dispatchers.IO) {
-            sendEvent(MovieScreenUiEvent.ToggleFavorite(movieId))
+            sendEvent(MovieScreenUiEvent.Insert(id))
+        }
+    }
+    fun delete(id: Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            sendEvent(MovieScreenUiEvent.Delete(id))
+        }
+    }
+    fun getById(id: Int){
+        viewModelScope.launch(Dispatchers.IO){
+            sendEvent(MovieScreenUiEvent.GetById(id))
         }
     }
 }
