@@ -10,7 +10,6 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val favouritesModule = module {
-    //single<FilmDatabase> { FilmDatabase.getInstance(androidContext()) }//регистрация бд
     single<FavouritesRepository> { FavouritesRepositoryImpl(get()) }
     factory<GetAllFavouritesFilmsUseCase> { GetAllFavouritesFilmsUseCase(get()) }
     viewModel<FavouritesViewModel>{
