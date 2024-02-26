@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace = "com.example.core.db"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 26
-
+        minSdk = libs.versions.minSdk.get().toInt()
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -39,4 +39,9 @@ dependencies {
     api(libs.kotlinx.coroutines.core)
     api(libs.room.ktx)
     kapt(libs.room.kapt)
+    implementation(libs.androidx.multidex)
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }

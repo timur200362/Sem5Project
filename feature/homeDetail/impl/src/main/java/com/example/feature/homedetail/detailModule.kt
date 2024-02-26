@@ -3,9 +3,9 @@ package com.example.feature.homedetail
 import com.example.feature.homedetail.impl.data.datasource.MovieDetailRepository
 import com.example.feature.homedetail.impl.data.datasource.remote.ApiFactory
 import com.example.feature.homedetail.impl.data.datasource.remote.ApiService
-import com.example.feature.homedetail.impl.data.datasource.MovieDetailRepositoryImpl
+import com.example.feature.homedetail.impl.domain.repository.MovieDetailRepositoryImpl
 import com.example.feature.homedetail.impl.presentation.MovieDetailViewModel
-import com.example.feature.homedetail.impl.usecase.MovieDetailUseCase
+import com.example.feature.homedetail.impl.domain.usecase.MovieDetailUseCase
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

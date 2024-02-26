@@ -11,6 +11,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
+        multiDexEnabled = true
     }
 
     compileOptions {
@@ -37,6 +38,7 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.multidex)
 
     implementation(project(":feature:home:api"))
     implementation(project(":feature:home:impl"))

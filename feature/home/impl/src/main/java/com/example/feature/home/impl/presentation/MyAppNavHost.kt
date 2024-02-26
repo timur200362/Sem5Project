@@ -12,7 +12,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -97,10 +101,20 @@ fun MovieScreen(
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = "${movie.genres?.joinToString { it.name }}",
+                            text = "${movie.genres?.joinToString { it?.name.toString() }}",
                             fontSize = 18.sp
                         )
                     }
+                    Icon(
+                        imageVector = if (movie.isFavorite) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
+                        contentDescription = "Favorite",
+                        tint = if (movie.isFavorite) Color.Red else Color.Gray,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable {
+                                movie.id?.let { viewModel.toggleFavorite(it) }
+                            }
+                    )
                 }
             }
         }

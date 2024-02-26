@@ -1,6 +1,8 @@
 package com.example.feature.homedetail.impl.presentation
 
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
@@ -19,8 +21,12 @@ import com.example.core.designsystem.ModuleappTheme
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.feature.homedetail.impl.data.datasource.remote.response.DetailMovieByIdResponse
@@ -41,12 +47,16 @@ fun LoadInfo(
     id:Int,
     viewModel: MovieDetailViewModel = koinViewModel {parametersOf(id)},
 ) {
+    val context = LocalContext.current
     val state by viewModel.state.collectAsStateWithLifecycle()
-    Column {
-//        AsyncImage(
-//            model = state.movieDetailInfo.poster?.url,
-//            contentDescription = null
-//        )
+    Column(
+        modifier = Modifier
+            .verticalScroll(rememberScrollState())
+    ) {
+        AsyncImage(
+            model = state.movieDetailInfo.poster?.url,
+            contentDescription = null
+        )
         Text(
             text = state.movieDetailInfo.name.toString(),
             modifier = Modifier.padding(top = 30.dp),
@@ -79,5 +89,16 @@ fun LoadInfo(
             modifier = Modifier.padding(top = 30.dp),
             fontSize = 18.sp
         )
+        state.movieDetailInfo.videos?.trailers?.map { trailer ->
+            ClickableText(
+                text = AnnotatedString( trailer?.name ?:  ""),
+                onClick = {
+                    val url = trailer?.url
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    context.startActivity(intent)
+                },
+                modifier = Modifier.padding(top = 8.dp)
+            )
+        }
     }
 }

@@ -8,6 +8,12 @@ android {
     namespace = "com.example.core.utlis"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
+    defaultConfig{
+        minSdk = libs.versions.minSdk.get().toInt()
+        multiDexEnabled = true
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -18,7 +24,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.androidx.multidex)
     implementation(libs.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

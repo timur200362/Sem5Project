@@ -1,6 +1,6 @@
 package com.example.feature.homedetail.impl.presentation
 
-import com.example.feature.homedetail.impl.usecase.MovieDetailUseCase
+import com.example.feature.homedetail.impl.domain.usecase.MovieDetailUseCase
 import com.example.feature.homedetail.mviRealisation.Reducer
 
 class MovieDetailReducer(

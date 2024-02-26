@@ -10,6 +10,12 @@ android {
     namespace = "com.example.feature.home.impl"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
+    defaultConfig{
+        minSdk = libs.versions.minSdk.get().toInt()
+        multiDexEnabled = true
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -38,6 +44,7 @@ dependencies {
     implementation(project(":feature:homeDetail:api"))
     implementation(project(":feature:homeDetail:impl"))
 
+    kapt(libs.room.kapt)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

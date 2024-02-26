@@ -1,7 +1,6 @@
-package com.example.feature.home.impl.usecase
+package com.example.feature.home.impl.domain.usecase
 
-import com.example.feature.home.impl.data.datasource.MovieRepository
-import com.example.feature.home.impl.data.datasource.MovieRepositoryImpl
+import com.example.feature.home.impl.data.datasource.repository.MovieRepository
 import com.example.feature.home.impl.data.datasource.memory.Movie
 
 class MovieUseCase(private val movieRepository: MovieRepository) {

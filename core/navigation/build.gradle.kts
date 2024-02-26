@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace = "com.example.core.navigation"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 24
-
+        minSdk = libs.versions.minSdk.get().toInt()
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -43,6 +43,7 @@ dependencies {
     api(libs.core.ktx)
     api(libs.androidx.appcompat)
     api(libs.navigation.compose)
+    implementation(libs.androidx.multidex)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

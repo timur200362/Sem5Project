@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace = "com.example.core.network"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 26
-
+        minSdk = libs.versions.minSdk.get().toInt()
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.androidx.multidex)
     api(libs.okhttp)
     api(libs.okhttp.logging)
     api(libs.koin)
@@ -47,4 +47,7 @@ dependencies {
     api(libs.retrofit.json.converter)
 
     implementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }

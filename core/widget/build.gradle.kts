@@ -8,6 +8,12 @@ android {
     namespace = "com.example.core.widget"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
+    defaultConfig{
+        minSdk = libs.versions.minSdk.get().toInt()
+        multiDexEnabled = true
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -18,10 +24,13 @@ android {
 }
 
 dependencies {
-
     api(project(":core:designsystem"))
-
+    implementation(libs.androidx.multidex)
     api(libs.coil)
     api(libs.coil.svg)
     api(libs.coil.compose)
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }

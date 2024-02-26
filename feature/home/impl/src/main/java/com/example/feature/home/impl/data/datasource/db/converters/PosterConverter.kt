@@ -6,7 +6,7 @@ import com.example.feature.home.impl.data.datasource.memory.Poster
 class PosterConverter {
 
     @TypeConverter
-    fun fromPoster(poster: Poster?): String? {
+    fun fromPoster(poster: Poster?): String {
         return "${poster?.url}|${poster?.previewUrl}"
     }
 
