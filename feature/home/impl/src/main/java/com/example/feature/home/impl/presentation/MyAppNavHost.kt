@@ -132,17 +132,17 @@ fun MovieScreen(
                                 }
                             }
                     )
-//                    Icon(
-//                        imageVector = Icons.Filled.Cancel,
-//                        contentDescription = "Favorite",
-//                        modifier = Modifier
-//                            .size(20.dp)
-//                            .clickable {
-//                                movie.id?.let {
-//                                    viewModel.delete(it)
-//                                }
-//                            }
-//                    )
+                    Icon(
+                        imageVector = Icons.Filled.Cancel,
+                        contentDescription = "Favorite",
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable {
+                                movie.id?.let {
+                                    viewModel.delete(it)
+                                }
+                            }
+                    )
                 }
             }
         }

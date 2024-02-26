@@ -12,12 +12,12 @@ interface FilmDao {
     @Insert
     suspend fun insert(film: Film)
 
-    @Query("DELETE FROM Film WHERE filmId=:id")
+    @Query("DELETE FROM Film WHERE id=:id")
     suspend fun delete(id: Int)
 
     @Query("SELECT * FROM Film WHERE favorite=1")
     suspend fun getAll(): List<Film>
 
-    @Query("SELECT * FROM Film WHERE filmId=:id")
+    @Query("SELECT * FROM Film WHERE id=:id")
     suspend fun getFilmById(id: Int): Film
 }
