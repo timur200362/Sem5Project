@@ -45,17 +45,17 @@ class MovieViewModel(
     }
     fun insert(id: Int){
         viewModelScope.launch(Dispatchers.IO) {
-            sendEvent(MovieScreenUiEvent.Insert(id))
+            reducer.sendEvent(MovieScreenUiEvent.Insert(id))
         }
     }
     fun delete(id: Int){
         viewModelScope.launch(Dispatchers.IO) {
-            sendEvent(MovieScreenUiEvent.Delete(id))
+            reducer.sendEvent(MovieScreenUiEvent.Delete(id))
         }
     }
     fun getById(id: Int){
         viewModelScope.launch(Dispatchers.IO){
-            sendEvent(MovieScreenUiEvent.GetById(id))
+            reducer.sendEvent(MovieScreenUiEvent.GetById(id))
         }
     }
 }

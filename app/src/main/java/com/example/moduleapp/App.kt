@@ -2,6 +2,7 @@ package com.example.moduleapp
 
 import android.app.Application
 import androidx.multidex.MultiDexApplication
+import com.example.feature.favourites.impl.di.favouritesModule
 import com.example.feature.home.impl.di.homeModule
 import com.example.feature.homedetail.detailModule
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +18,7 @@ class App:MultiDexApplication() {
         startKoin{
             androidLogger(Level.DEBUG)
             androidContext(this@App)
-            modules(listOf(homeModule,detailModule))
+            modules(listOf(homeModule,detailModule, favouritesModule))
         }
     }
 }

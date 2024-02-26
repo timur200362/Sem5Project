@@ -39,7 +39,10 @@ dependencies {
     implementation(project(":core:presentation"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:navigation"))
+    implementation(project(":feature:home:api"))
+    implementation(project(":feature:home:impl"))
 
+    kapt(libs.room.kapt)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

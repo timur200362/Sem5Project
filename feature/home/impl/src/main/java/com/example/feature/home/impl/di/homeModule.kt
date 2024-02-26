@@ -24,10 +24,12 @@ val homeModule = module {
     factory<InsertUseCase> { InsertUseCase(get(), get()) }//для записи в базу данных
     factory<DeleteUseCase> { DeleteUseCase(get()) }
     factory<GetByIdUseCase> { GetByIdUseCase(get()) }
-    viewModel<MovieViewModel>{ MovieViewModel(
-        get(),
-        get(),
-        get(),
-        get())
+    viewModel<MovieViewModel>{
+        MovieViewModel(
+            get(),
+            get(),
+            get(),
+            get()
+        )
     }
 }
