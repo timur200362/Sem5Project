@@ -1,12 +1,12 @@
 package com.example.feature.home.impl.data.datasource.memory
 
-data class Movie(
+data class MovieUI(
     val country: List<Country>,
-    val description: String?,
+    val description: String,
     val genres: List<Genre>,
-    val id: Int?,
-    val name: String?,
-    val poster: Poster?,
+    val id: Int,
+    val name: String,
+    val poster: Poster,
     val year: Int,
-//    val rating: Rating?,
+    var isFavorite:Boolean
 )

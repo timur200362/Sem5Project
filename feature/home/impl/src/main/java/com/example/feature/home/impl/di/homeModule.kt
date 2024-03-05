@@ -7,7 +7,6 @@ import com.example.feature.home.impl.data.datasource.remote.ApiService
 import com.example.feature.home.impl.domain.converter.MovieToFilmConverter
 import com.example.feature.home.impl.domain.repository.MovieRepositoryImpl
 import com.example.feature.home.impl.domain.usecase.DeleteUseCase
-import com.example.feature.home.impl.domain.usecase.GetByIdUseCase
 import com.example.feature.home.impl.domain.usecase.InsertUseCase
 import com.example.feature.home.impl.domain.usecase.MovieUseCase
 import com.example.feature.home.impl.presentation.MovieViewModel
@@ -23,10 +22,8 @@ val homeModule = module {
     factory<MovieUseCase> { MovieUseCase(get()) }//для api запроса
     factory<InsertUseCase> { InsertUseCase(get(), get()) }//для записи в базу данных
     factory<DeleteUseCase> { DeleteUseCase(get()) }
-    factory<GetByIdUseCase> { GetByIdUseCase(get()) }
     viewModel<MovieViewModel>{
         MovieViewModel(
-            get(),
             get(),
             get(),
             get()

@@ -116,24 +116,13 @@ fun MovieScreen(
                 }
                 Row {
                     Icon(
-                        imageVector = Icons.Filled.FavoriteBorder,
+                        imageVector = if (movie.isFavorite) {Icons.Filled.Favorite} else {Icons.Filled.FavoriteBorder},
                         contentDescription = "Favorite",
                         modifier = Modifier
                             .size(20.dp)
                             .clickable {
-                                movie.id?.let {
-                                    viewModel.insert(it)
-                                }
-                            }
-                    )
-                    Icon(
-                        imageVector = Icons.Filled.Cancel,
-                        contentDescription = "Favorite",
-                        modifier = Modifier
-                            .size(20.dp)
-                            .clickable {
-                                movie.id?.let {
-                                    viewModel.delete(it)
+                                movie.id.let {
+                                    viewModel.toggleFavorites(movie)
                                 }
                             }
                     )

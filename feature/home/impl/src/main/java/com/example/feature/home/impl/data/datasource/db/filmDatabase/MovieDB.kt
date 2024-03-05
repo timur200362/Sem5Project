@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Film(
+data class MovieDB(
     @PrimaryKey(autoGenerate = true) val filmId:Int?,
     @ColumnInfo(name = "countries") val countries: List<String>,
     @ColumnInfo(name = "description") val description:String?,

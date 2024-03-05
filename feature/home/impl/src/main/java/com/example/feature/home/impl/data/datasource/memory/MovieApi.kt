@@ -2,7 +2,7 @@ package com.example.feature.home.impl.data.datasource.memory
 
 import com.google.gson.annotations.SerializedName
 
-data class Doc(
+data class MovieApi(
     @SerializedName("countries")
     val countries: List<Country>,
     @SerializedName("description")

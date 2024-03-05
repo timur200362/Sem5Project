@@ -1,12 +1,7 @@
 package com.example.feature.favourites.impl.presentation
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.feature.favourites.impl.domain.usecase.GetAllFavouritesFilmsUseCase
-import com.example.feature.home.impl.domain.usecase.DeleteUseCase
-import com.example.feature.home.impl.domain.usecase.GetByIdUseCase
-import com.example.feature.home.impl.domain.usecase.InsertUseCase
-import com.example.feature.home.impl.domain.usecase.MovieUseCase
 import com.example.feature.home.mviRealisation.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow

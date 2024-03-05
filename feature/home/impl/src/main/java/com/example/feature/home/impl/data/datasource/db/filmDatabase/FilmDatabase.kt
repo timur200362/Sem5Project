@@ -11,7 +11,7 @@ import com.example.feature.home.impl.data.datasource.db.converters.ListConverter
 import com.example.feature.home.impl.data.datasource.db.converters.PosterConverter
 
 @Database(
-    entities = [Film::class],
+    entities = [MovieDB::class],
     version = 1,
     autoMigrations = [
 
